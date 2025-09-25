@@ -7,12 +7,10 @@ public class Main {
         int choice ;
         Scanner scanner = new Scanner(System.in);
         System.out.println("hello");
-        String data = scanner.next();
-        data = (data) -> {return "test";};
+        Function<String,String> data = (data) -> {return "test";};
 
         System.out.println(data);
 
 
         }
     }
-6
