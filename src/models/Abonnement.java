@@ -2,6 +2,7 @@ package models;
 
 import java.time.LocalDate;
 import java.util.UUID;
+import java.math.BigDecimal;
 
 public abstract class Abonnement {
 
@@ -13,13 +14,22 @@ public abstract class Abonnement {
 
     protected String id;
     protected String nomService;
-    protected double montantMensuel;
+    protected BigDecimal montantMensuel;
     protected LocalDate dateDebut;
     protected LocalDate dateFin;
     protected Statut statut;
 
-    public Abonnement(String nomService, double montantMensuel, LocalDate dateDebut, LocalDate dateFin, Statut statut) {
+    public Abonnement(String nomService, BigDecimal montantMensuel, LocalDate dateDebut, LocalDate dateFin, Statut statut) {
         this.id = UUID.randomUUID().toString(); // Génération automatique de l’UUID
+        this.nomService = nomService;
+        this.montantMensuel = montantMensuel;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.statut = statut;
+    }
+    public Abonnement(String id, String nomService, BigDecimal montantMensuel,
+                      LocalDate dateDebut, LocalDate dateFin, Statut statut) {
+        this.id = id;
         this.nomService = nomService;
         this.montantMensuel = montantMensuel;
         this.dateDebut = dateDebut;
@@ -40,11 +50,11 @@ public abstract class Abonnement {
         this.nomService = nomService;
     }
 
-    public double getMontantMensuel() {
+    public BigDecimal getMontantMensuel() {
         return montantMensuel;
     }
 
-    public void setMontantMensuel(double montantMensuel) {
+    public void setMontantMensuel(BigDecimal montantMensuel) {
         this.montantMensuel = montantMensuel;
     }
 

@@ -29,6 +29,17 @@ public class Paiement {
         this.statut = statut;
     }
 
+    public Paiement(String idPaiement, String idAbonnement, LocalDate dateEcheance,
+                    LocalDate datePaiement, String typePaiement, Statut statut) {
+        this.idPaiement = idPaiement; // use DB value
+        this.idAbonnement = idAbonnement;
+        this.dateEcheance = dateEcheance;
+        this.datePaiement = datePaiement;
+        this.typePaiement = typePaiement;
+        this.statut = statut;
+    }
+
+
     // Getters & Setters
     public String getIdPaiement() {
         return idPaiement;
